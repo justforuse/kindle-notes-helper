@@ -17,11 +17,13 @@
   "bugs": {
     "url": "https://github.com/justforuse/kindle-notes-helper/issues"
   },
+  "engines": {
+    "node": ">14.18"
+  },
   "homepage": "https://github.com/justforuse/kindle-notes-helper#readme",
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "element-plus": "^2.2.21",
-    "kindle-clipping": "^1.0.6",
     "vue": "^3.2.45"
   },
   "devDependencies": {

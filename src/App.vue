@@ -22,18 +22,26 @@
     <div v-if="list.length" class="record-list">
       <h3>
         Total: {{ list.length }}
-        <el-icon class="download-icon" @click="handleDownloadAll"><Download /></el-icon>
+        <el-icon class="download-icon" @click="handleDownloadAll"
+          ><Download
+        /></el-icon>
       </h3>
       <details v-for="(record, i) in list" :key="i" class="record-item">
         <summary>
-          {{ record.bookName }}
-          <el-icon class="download-icon" @click.stop.prevent="() => handleDownload(i)"><Download /></el-icon>
+          <div>
+            {{ record.bookName }}
+            <el-icon
+              class="download-icon"
+              @click.stop.prevent="() => handleDownload(i)"
+              ><Download
+            /></el-icon>
+          </div>
         </summary>
-        <ul>
+        <ol>
           <li v-for="(note, j) in record.notes" :key="j">
             {{ note }}
           </li>
-        </ul>
+        </ol>
       </details>
     </div>
     <h3 v-else>Notes will be show here.</h3>
@@ -74,7 +82,11 @@ export default {
     }
 
     const handleDownload = (index) => {
-      download(JSON.stringify(list.value[index].notes, null, 2), `${list.value[index].bookName}.txt`, 'text/plain')
+      download(
+        JSON.stringify(list.value[index].notes, null, 2),
+        `${list.value[index].bookName}.txt`,
+        'text/plain'
+      )
     }
     return {
       list,
@@ -112,11 +124,18 @@ export default {
   box-shadow: 0 0 6px 0 #ccc;
   padding: 10px 20px;
   margin: 24px;
+  line-height: 1.7;
   summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     cursor: pointer;
+    div {
+      display: inline-flex;
+      width: calc(100% - 20px);
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+  li {
+    margin-bottom: .6em;
   }
 }
 </style>
