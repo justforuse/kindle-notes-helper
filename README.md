@@ -1,5 +1,13 @@
-# Kindle notes helper
-Export your kindle notes from `txt` file
+<p align="center">
+  <img src="user-images.githubusercontent.com/11868477/202887584-fa0345d6-1892-4949-9eb3-1f4238c10bcc.png" height="120">
+</p>
+
+<h1 align="center">
+  Kindle notes helper
+</h1>
+<p align="center">
+  Export your kindle notes from `txt` file.
+<p>
 
 ## How to use it
 
